@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello WebGL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="helloWebGL.js"></script>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400px" height="400px"></canvas>
+
+<script>
+
+    var canvas = document.getElementById("myCanvas");
+    var gl;
+
+    try {
+        gl = canvas.getContext("webgl");
+    } catch (e) {
+    }
+
+    if (!gl) {
+        alert("Bogus! No WebGL.");
+    }
+
+    var hello = new HelloWebGL(canvas, gl);
+
+    hello.draw();
+
+</script>
+</body>
+</html>
